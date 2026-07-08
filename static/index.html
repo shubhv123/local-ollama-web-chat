@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ollama Minimal Chat</title>
+    <!-- Google Fonts for Notion Aesthetic: Inter and Monospace -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Minimal Header -->
+        <header class="chat-header">
+            <div class="logo-area">
+                <div class="logo-3d-wrapper">
+                    <!-- Pure CSS 3D Cube Icon -->
+                    <div class="cube-icon">
+                        <div class="side front"></div>
+                        <div class="side back"></div>
+                        <div class="side right"></div>
+                        <div class="side left"></div>
+                        <div class="side top"></div>
+                        <div class="side bottom"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>Ollama Chat</h1>
+                    <p class="subtitle">Minimalist 3D Workspace</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="model-selector-3d">
+                    <i class="fa-solid fa-cube"></i>
+                    <select id="model-select">
+                        <option value="gemma3:1b">gemma3:1b</option>
+                    </select>
+                </div>
+                <button id="clear-btn" class="btn-3d secondary" title="Clear message history">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Clear</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Message Viewport -->
+        <main class="chat-viewport">
+            <div id="welcome-container" class="welcome-container">
+                <div class="welcome-card-3d">
+                    <div class="welcome-icon">✦</div>
+                    <h2>Local Ollama Assistant</h2>
+                    <p>A private, local chat interface connected to your Ollama runtime. Responses are streamed directly from your machine.</p>
+                    
+                    <div class="prompt-grid">
+                        <button class="quick-prompt-btn" data-prompt="Explain quantum computing in simple terms.">
+                            <span class="prompt-title">Quantum Computing</span>
+                            <span class="prompt-desc">Explain it in plain English</span>
+                        </button>
+                        <button class="quick-prompt-btn" data-prompt="Write a Python script to fetch data from an API.">
+                            <span class="prompt-title">Python API Script</span>
+                            <span class="prompt-desc">Simple requests example</span>
+                        </button>
+                        <button class="quick-prompt-btn" data-prompt="Draft a polite email to follow up on a project update.">
+                            <span class="prompt-title">Follow-up Email</span>
+                            <span class="prompt-desc">Polite and professional draft</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat messages list -->
+            <div id="chat-messages" class="chat-messages"></div>
+            
+            <!-- Loading Indicator -->
+            <div id="chat-loading" class="chat-loading hidden">
+                <div class="loading-cube-wrapper">
+                    <div class="cube-mini">
+                        <div class="side front"></div>
+                        <div class="side back"></div>
+                        <div class="side right"></div>
+                        <div class="side left"></div>
+                        <div class="side top"></div>
+                        <div class="side bottom"></div>
+                    </div>
+                </div>
+                <span class="loading-text">Thinking...</span>
+            </div>
+        </main>
+
+        <!-- User Input Area -->
+        <footer class="chat-input-bar">
+            <div class="input-wrapper-3d">
+                <textarea id="user-input" placeholder="Ask a question or type a command..." rows="1"></textarea>
+                <button id="send-btn" class="btn-3d primary" title="Send message">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+            <div class="input-hints">
+                <span><strong>Ctrl + Enter</strong> to send</span>
+                <span>•</span>
+                <span>Powered by Ollama Local API</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Markdown Parser (Marked) and Syntax Highlighting (Prism) for high-end formatting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
