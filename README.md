@@ -1,4 +1,4 @@
-# Notion-Style Local Ollama Chat
+# Local Ollama Chat
 
 A private, minimalist, Notion-inspired black and white chat application that runs completely locally, communicating with your local Ollama models (such as `gemma3:1b`). Features Neo-Brutalist 3D interaction components, physical active button press styles, and a rotating CSS 3D cube.
 
